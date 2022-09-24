@@ -8,7 +8,7 @@
 
 #include "create-and-destroy.h"
 #include "memory-manager.h"
-/* #include "utilities.h" */
+#include "utilities.h"
 
 const int defaultStringValueLength = 16;
 
@@ -287,7 +287,7 @@ LISP_VALUE * createContinuationReturn(int id, LISP_VALUE * value) {
 
 /* **** Expression struct creation functions **** */
 
-/* LISP_VAR_LIST_ELEMENT * createVariableListElement(LISP_VAR * var, LISP_VAR_LIST_ELEMENT * next) {
+LISP_VAR_LIST_ELEMENT * createVariableListElement(LISP_VAR * var, LISP_VAR_LIST_ELEMENT * next) {
 	failIf(var == NULL, "createVariableListElement() : var == NULL");
 	failIf(var->name == NULL, "createVariableListElement() : var->name == NULL");
 
@@ -302,7 +302,7 @@ LISP_VALUE * createContinuationReturn(int id, LISP_VALUE * value) {
 	);
 }
 
-LISP_EXPR_PAIR_LIST_ELEMENT * createExpressionPairListElement(LISP_EXPR * expr, LISP_EXPR * expr2, LISP_EXPR_PAIR_LIST_ELEMENT * next) {
+/* LISP_EXPR_PAIR_LIST_ELEMENT * createExpressionPairListElement(LISP_EXPR * expr, LISP_EXPR * expr2, LISP_EXPR_PAIR_LIST_ELEMENT * next) {
 	return createUniversalStruct(
 		schemeStructType_ExpressionPairListElement,
 		0,
@@ -312,7 +312,7 @@ LISP_EXPR_PAIR_LIST_ELEMENT * createExpressionPairListElement(LISP_EXPR * expr, 
 		expr2,
 		next
 	);
-}
+} */
 
 LISP_VAR_EXPR_PAIR_LIST_ELEMENT * createVariableExpressionPairListElement(char * buf, LISP_EXPR * expr, LISP_VAR_EXPR_PAIR_LIST_ELEMENT * next) {
 	return allocateStringAndCreateUniversalStruct(
@@ -324,7 +324,7 @@ LISP_VAR_EXPR_PAIR_LIST_ELEMENT * createVariableExpressionPairListElement(char *
 		NULL,
 		next
 	);
-} */
+}
 
 LISP_EXPR * createLambdaExpression(LISP_VAR_LIST_ELEMENT * args, LISP_EXPR * body) {
 	return createUniversalStruct(
@@ -352,7 +352,7 @@ LISP_EXPR * createSetExpression(LISP_VAR * var, LISP_EXPR * expr) {
 
 /* **** Expression list struct creation functions **** */
 
-/* LISP_EXPR_LIST_ELEMENT * createExpressionListElement(LISP_EXPR * expr, LISP_EXPR_LIST_ELEMENT * next) {
+LISP_EXPR_LIST_ELEMENT * createExpressionListElement(LISP_EXPR * expr, LISP_EXPR_LIST_ELEMENT * next) {
 	return createUniversalStruct(
 		schemeStructType_ExpressionListElement,
 		0,
@@ -362,7 +362,7 @@ LISP_EXPR * createSetExpression(LISP_VAR * var, LISP_EXPR * expr) {
 		NULL,
 		next
 	);
-} */
+}
 
 /* A variable is an Expression but not a Value. */
 
@@ -583,7 +583,7 @@ SCHEME_UNIVERSAL_TYPE * createAssociativeArrayListElement(LISP_VALUE * key, LISP
 		value,
 		next
 	);
-}
+} */
 
 STRING_BUILDER_TYPE * createStringBuilder(int bufIncSize) {
 	const int defaultBufferIncrementSize = 16;
@@ -601,6 +601,6 @@ STRING_BUILDER_TYPE * createStringBuilder(int bufIncSize) {
 	failIf(getBufferSizeIncrementInStringBuilder(result) <= 0, "StringBuilder roundUpStringTypeBufferSize() : getBufferSizeIncrementInStringBuilder(result) <= 0");
 
 	return result;
-} */
+}
 
 /* **** The End **** */

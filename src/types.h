@@ -162,15 +162,15 @@ enum {
 	lispType_LastExpressionType = lispExpressionType_DefineMacro, */
 
 	schemeStructType_Environment,
+	schemeStructType_ExpressionListElement,
 	schemeStructType_NameValueListElement,
+	schemeStructType_VariableExpressionPairListElement,
 	schemeStructType_VariableListElement,
 	/* schemeStructType_ArrayListElement,
 	schemeStructType_AssociativeArrayListElement,
-	schemeStructType_ExpressionListElement,
 	schemeStructType_ExpressionPairListElement,
 	schemeStructType_MacroListElement,
-	schemeStructType_ValueListElement,
-	schemeStructType_VariableExpressionPairListElement, */
+	schemeStructType_ValueListElement, */
 
 	stringBuilderType
 };

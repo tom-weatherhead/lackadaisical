@@ -7,11 +7,11 @@
 
 #include "types.h"
 
-/* #include "char-source.h"
-#include "input-output.h" */
+#include "char-source.h"
+#include "input-output.h"
 #include "memory-manager.h"
-/* #include "parse-and-evaluate.h"
-#include "tests.h" */
+#include "parse-and-evaluate.h"
+/* #include "tests.h" */
 
 /* **** The Main MoFo **** */
 
@@ -42,9 +42,9 @@ int main(int argc, char * argv[]) {
 		runTests();
 	} else if (filename != NULL) {
 		execScriptInFile(filename, NULL);
-	} else {
+	} */ else {
 		readEvalPrintLoop();
-	} */
+	}
 
 	const int numFreed = freeAllStructs();
 
